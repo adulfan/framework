@@ -1,0 +1,164 @@
+//Custom LESS file with all the specific styles per theme.
+
+////////////
+// LAYOUT //
+////////////
+
+// header
+header#top {
+	margin-bottom: 1em;
+}
+
+// main column & sidebar
+.middle {
+	.column(8);
+}
+.sidebar {
+	.column(2);
+}
+.accordion {
+  .column(3);
+}
+.row {
+  .row(12);
+}
+section[class*="col"] {
+  .column(1);
+  background: red;
+  &.grid2 {
+    .column(2);
+    background: gray;
+  }
+  &.grid3 {
+    .column(3);
+    background: gray;
+  }
+  &.grid4 {
+    .column(4);
+    background: gray;
+  }
+}
+
+header#top {
+	background-color: #000;
+}
+h1 {
+	font-family: Georgia;
+	font-size: 2em;
+	color: #fff;
+	 a {
+		color: white;
+		text-decoration: none;
+	}
+}
+h2 {
+	font-family: Georgia;
+	font-size: 1.5em;
+	color: @black;
+	text-align: center;
+}
+h3 {
+	font-family: Georgia;
+	font-size: 1em;
+	color: @black;
+}
+.back-to-top {
+  padding: 1000px 0 10px 0;
+  .push(10);
+  display: block;
+}
+.accordion h3 {
+  cursor: pointer;
+  margin: 0 0 10px 0;
+  &:before {
+    content: "\f107";
+    font-family: "FontAwesome";
+    margin: 0 5px 0 0;
+  }
+  &.up:before {
+    content: "\f106";
+  }
+}
+.people {
+  border: solid 1px @red;
+  .border-radius(5px);
+}
+ul#boxes li {
+	font-family: Georgia;
+	font-size: 1.33em;
+	padding: 2.5em 0;
+	color: #999;
+	background-color: #e5e5e5;
+	text-align: center;
+}
+.sidebar {
+  .border-radius(8px);
+  #gradient > .vertical(@white, @gray);
+  position: relative; 
+}
+.popup {
+  text-align: center;
+}
+.trigger {
+  cursor: pointer;
+}
+.dropdown-menu {
+  background-color: @white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  .border-radius(6px);
+  .box-shadow(1px 0 5px #ccc);
+  left: 50%;
+  display: none;
+/*   width: 100%; */
+  width: 70%;
+  padding: 1px;
+  position: absolute;
+  text-align: left;
+  top: 50px;
+  white-space: normal;
+  z-index: 1010;
+  margin: 0 0 0 -35%;
+   .padded {
+     padding: 1.5%;
+   }
+    &:before {
+      .arrow-top();
+    }
+    &:after {
+      .arrow-top(6px, solid, #fff);
+    }
+    //dropdown on top
+    &.top {
+      bottom:90%;
+      top: auto;
+      &:before {
+        .arrow-bottom();
+      }
+      &:after {
+        .arrow-bottom(6px, solid, #fff); 
+      }
+    }
+    //dropdown on the right.
+    &.right {
+      left: 107%;
+      top:5px;
+      &:before {
+        .arrow-right();
+      }
+      &:after {
+        .arrow-right(6px, solid, #fff); 
+      }
+    }
+    //dropdown on the left
+    &.left {
+      left: auto;
+      right: 70%;
+      top: 5px;
+      &:before {
+        .arrow-left();
+      }
+      &:after {
+        .arrow-left(6px, solid, #fff); 
+      }
+    }
+}
