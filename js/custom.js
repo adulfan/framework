@@ -10,9 +10,10 @@
 
   //dropdown functionality links
   function accordion() {
-    var header =  $('.accordion h3');
+    var header =  $('#accordion h3');
+    header.siblings('ul').hide();
     header.on('click', function(e) {
-      $(this).siblings('ul').slideToggle(500);
+      $(this).next('ul').slideToggle(500);
       $(this).toggleClass('up');
     });
   }
@@ -107,6 +108,7 @@
     equal_cols();
     back_to_top ();
     accordion();
+/* $( "#accordion" ).accordion(); */
     drop_downs();
   });
   

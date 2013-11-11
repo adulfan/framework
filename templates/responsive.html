@@ -8,11 +8,16 @@
 
   <!-- Stylesheets -->
 	<link rel="stylesheet" href="../css/compiled.css" type="text/css" media="screen" />
-	
+<!-- 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" media="screen" /> -->
   <!-- Scripts -->
   <script src="http://code.jquery.com/jquery-2.0.0.js" type="text/javascript"></script>
-
-<!--   <script src="../library/jquery-1.10.2.js" type="text/javascript"></script> -->
+<!--
+  <script src="../library/jquery.ui.core.js" type="text/javascript"></script>
+  <script src="../library/jquery.ui.widget.js" type="text/javascript"></script>
+  <script src="../library/jquery.ui.accordion.js" type="text/javascript"></script>
+-->
+  
+  <!--   <script src="../library/jquery-1.10.2.js" type="text/javascript"></script> -->
   <!--
   <script src="../library/jquery-2.0.3.min.js" type="text/javascript"></script>
   <script src="../library/jquery-2.0.3.min.map" type="text/javascript"></script>
@@ -56,17 +61,22 @@
   	<section class="middle equal">
     	<article id="maincolumn">
     		<h2>Main</h2>
-    		<div class="accordion">
+    		<div id="accordion">
     		  <h3>LIST ONE</h3>
     		  <!-- dynamic list -->
+    		  <div>
           <ul class="people"></ul> 
+    		  </div>
           <h3>LIST ONE</h3>
     		  <!-- dynamic list -->
-          <ul class="people"></ul>
+           <div>
+          <ul class="people"></ul> 
+    		  </div>
           <h3>LIST ONE</h3>
     		  <!-- dynamic list -->
-          <ul class="people"></ul>    
-   
+           <div>
+          <ul class="people"></ul> 
+    		  </div> 
     		</div>    
     	</article>
   	</section>
