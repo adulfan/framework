@@ -109,14 +109,18 @@
     var n = 5;
     var expand_list_li = $('.expand-list li');
     var sum_total = expand_list_li.length;
-  
-    if(sum_total > 9 ) {
+    
+    //check to see if the list is even longer then needed to display.
+    if(sum_total > 5 ) {
      $('.expand-list li').slice(n).hide();
+     //add link if the list has more links to display.
      $('.block').append('<a class="more-link">View All</a>');
     }
     
     $('.more-link').on('click', function(e) {
-      $('.expand-list li').slice(n).slideToggle(400); 
+      //show/hide the list.
+      $('.expand-list li').slice(n).slideToggle(400);
+      //modify the link text to show more or hide.
       $(this).html(($(this).text() == 'View All') ? 'View Less' : 'View All');
       $(this).toggleClass('down');
       e.preventDefault();
