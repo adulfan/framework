@@ -67,38 +67,32 @@ h3 {
   .push(10);
   display: block;
 }
-#accordion h3 {
-  cursor: pointer;
-  margin: 0;
-  border: solid 1px red;
-  #gradient > .vertical(@gray, @white);
-  padding: 5px;
-  &.up {
-    #gradient > .vertical(@white, @gray);
-  }
-  &:before {
-    content: "\f107";
-    font-family: "FontAwesome";
-    margin: 0 5px 0 0;
-  }
-  &.up:before {
-    content: "\f106";
-  }
-}
-.people {
+#accordion {
+  .box {
   border: solid 1px @red;
   .border-radius(5px);
   .border-top-radius(0);
   border-top: none;
   padding: 10px;
-}
-ul#boxes li {
-	font-family: Georgia;
-	font-size: 1.33em;
-	padding: 2.5em 0;
-	color: #999;
-	background-color: #e5e5e5;
-	text-align: center;
+  }
+  h3 {
+    cursor: pointer;
+    margin: 0;
+    border: solid 1px red;
+    #gradient > .vertical(@gray, @white);
+    padding: 5px;
+    &.up {
+      #gradient > .vertical(@white, @gray);
+    }
+    &:before {
+      content: "\f055";
+      font-family: "FontAwesome";
+      margin: 0 5px 0 0;
+    }
+    &.up:before {
+      content: "\f056";
+    }
+  }
 }
 .sidebar {
   .border-radius(8px);

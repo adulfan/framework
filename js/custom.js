@@ -11,17 +11,18 @@
   //dropdown functionality links
   function accordion() {
     var header =  $('#accordion h3');
-    header.next('ul').not(":first").hide();
+    header.next().not(":first").hide();
+    header.first().addClass('up');
     header.on('click', function(e) {
-      if ($(this).next("ul").is(":visible")) {
-        e.stopPropagation();
+      if ($(this).next().is(":visible")) {
         $(this).next().slideUp('slow');
         header.removeClass('up');
+        e.stopPropagation();
       } else {
-          $("ul").slideUp('slow');
+          header.next().slideUp('slow');
           header.removeClass('up');
           $(this).addClass('up');
-           $(this).next('ul').slideDown('slow'); 
+           $(this).next().slideDown('slow'); 
           e.stopPropagation();    
       }
     });
@@ -63,8 +64,19 @@
     $.each(localArr, function(index, value) {
       dynamicItems += "<li id=" + index + ">" + value + "</li>";
     });
-    
+  
     list.append(dynamicItems);
+ 
+    var localArr = ["Monday", "Tuesday", "Wednsday", "Thursday", "Friday","Saturday", "Sunday"],
+  	list = $("ul.days");
+  	dynamicItems = "";
+  
+    $.each(localArr, function(index, value) {
+      dynamicItems += "<li>" + value + "</li>";
+    });
+  
+    list.append(dynamicItems);
+    
   }
   
   //back to top of the page function.
