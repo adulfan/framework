@@ -69,7 +69,13 @@ h3 {
 }
 #accordion h3 {
   cursor: pointer;
-  margin: 0 0 10px 0;
+  margin: 0;
+  border: solid 1px red;
+  #gradient > .vertical(@gray, @white);
+  padding: 5px;
+  &.up {
+    #gradient > .vertical(@white, @gray);
+  }
   &:before {
     content: "\f107";
     font-family: "FontAwesome";
@@ -82,6 +88,8 @@ h3 {
 .people {
   border: solid 1px @red;
   .border-radius(5px);
+  .border-top-radius(0);
+  border-top: none;
 }
 ul#boxes li {
 	font-family: Georgia;

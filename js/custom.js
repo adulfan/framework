@@ -11,10 +11,19 @@
   //dropdown functionality links
   function accordion() {
     var header =  $('#accordion h3');
-    header.siblings('ul').hide();
+    header.next('ul').not(":first").hide();
     header.on('click', function(e) {
-      $(this).next('ul').slideToggle(500);
-      $(this).toggleClass('up');
+      if ($(this).next("ul").is(":visible")) {
+        e.stopPropagation();
+        $(this).next().slideUp('fast');
+        header.removeClass('up');
+      } else {
+          $("ul").slideUp('fast');
+          header.removeClass('up');
+          $(this).addClass('up');
+           $(this).next('ul').slideDown('fast'); 
+          e.stopPropagation();    
+      }
     });
   }
   //equal columns
