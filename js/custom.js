@@ -15,13 +15,13 @@
     header.on('click', function(e) {
       if ($(this).next("ul").is(":visible")) {
         e.stopPropagation();
-        $(this).next().slideUp('fast');
+        $(this).next().slideUp('slow');
         header.removeClass('up');
       } else {
-          $("ul").slideUp('fast');
+          $("ul").slideUp('slow');
           header.removeClass('up');
           $(this).addClass('up');
-           $(this).next('ul').slideDown('fast'); 
+           $(this).next('ul').slideDown('slow'); 
           e.stopPropagation();    
       }
     });
