@@ -104,19 +104,25 @@
       }
     });
   }
-  //something to work at LATER
+  //expand collapse list of links or data.
   function expand_collapse() {
-    $('.block h5').click(
-      function() {
-        $(this).siblings().slideUp();
-        $(this).addClass('up');
-      },
-      function() {
-        $(this).siblings().slideDown();
-        $(this).removeClass('up');
-    });
-  };
+    var n = 5;
+    var expand_list_li = $('.expand-list li');
+    var sum_total = expand_list_li.length;
   
+    if(sum_total > 9 ) {
+     $('.expand-list li').slice(n).hide();
+     $('.block').append('<a class="more-link">View All</a>');
+    }
+    
+    $('.more-link').on('click', function(e) {
+      $('.expand-list li').slice(n).slideToggle(400); 
+      $(this).html(($(this).text() == 'View All') ? 'View Less' : 'View All');
+      $(this).toggleClass('down');
+      e.preventDefault();
+   });
+  }//end expend list function.
+
   $(function() {
    // The DOM is ready!
    
@@ -129,8 +135,8 @@
     equal_cols();
     back_to_top ();
     accordion();
-/* $( "#accordion" ).accordion(); */
     drop_downs();
+    expand_collapse();
   });
   
   $(window).resize(function (e) {
