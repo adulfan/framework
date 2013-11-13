@@ -7,7 +7,16 @@
 body, h1, h2, h3, h4, h5, h6 {
  font-family:  @font-family-sans-serif;
 }
-
+a, 
+a:active,
+a:visited,
+a:focus,
+a:hover {
+  color: @link-color;
+  &:hover {
+    color: @link-hover-color;
+  }
+}
 // header
 header#top {
 	margin-bottom: 1em;
@@ -72,9 +81,7 @@ h3 {
 }
 #accordion {
   .box {
-  border: solid 1px @red;
-  .border-radius(5px);
-  .border-top-radius(0);
+  border: solid 1px @startColor;
   border-top: none;
   padding: 10px;
   }
@@ -83,9 +90,11 @@ h3 {
     margin: 0;
     color: @white;
     text-shadow: @textShadow;
-    border: solid 1px red;
+    border: solid 1px @endColor;
     #gradient > .vertical(@startColor, @endColor);
     padding: 5px;
+    &.up:first-child {
+    }
     &.up {
       #gradient > .vertical(@endColor, @startColor);
     }
@@ -176,7 +185,7 @@ h3 {
     margin: 0 0 10px 0;
   }
   .more-link {
-    color: @red;
+    color: @link-color;
     cursor: pointer;
    &:after {
      font-family: "FontAwesome";
