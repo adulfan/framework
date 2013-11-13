@@ -1,26 +1,4 @@
-//Mixin with all the functions/variables needed
-
-/////////
-// GRID //
-//////////
-
-// Specify the number of columns and set column and gutter widths
-@columns: 12;
-@column-width: 60;
-@gutter-width: 20;
-
-// Remove the definition below for a pixel-based layout
-@total-width: 100%;
-
-//////////////
-// COLORS //
-/////////////
-@white: #fff;
-@black: #000;
-@red: #ed2024;
-@green: #359946;
-@gray: #ccc;
-
+//Mixin with all the functions
 .clearfix{
 	*zoom:1;
 	&:before,
@@ -143,53 +121,52 @@
 // Transitions
 .transition(@transition) {
   -webkit-transition: @transition;
-     -moz-transition: @transition;
-       -o-transition: @transition;
           transition: @transition;
+}
+.transition-property(@transition-property) {
+  -webkit-transition-property: @transition-property;
+          transition-property: @transition-property;
 }
 .transition-delay(@transition-delay) {
   -webkit-transition-delay: @transition-delay;
-     -moz-transition-delay: @transition-delay;
-       -o-transition-delay: @transition-delay;
           transition-delay: @transition-delay;
+}
+.transition-duration(@transition-duration) {
+  -webkit-transition-duration: @transition-duration;
+          transition-duration: @transition-duration;
+}
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+     -moz-transition: -moz-transform @transition;
+       -o-transition: -o-transform @transition;
+          transition: transform @transition;
 }
 
 // Transformations
 .rotate(@degrees) {
   -webkit-transform: rotate(@degrees);
-     -moz-transform: rotate(@degrees);
-      -ms-transform: rotate(@degrees);
-       -o-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees); // IE9+
           transform: rotate(@degrees);
 }
 .scale(@ratio) {
   -webkit-transform: scale(@ratio);
-     -moz-transform: scale(@ratio);
-      -ms-transform: scale(@ratio);
-       -o-transform: scale(@ratio);
+      -ms-transform: scale(@ratio); // IE9+
           transform: scale(@ratio);
 }
-.translate(@x, @y) {
+.translate(@x; @y) {
   -webkit-transform: translate(@x, @y);
-     -moz-transform: translate(@x, @y);
-      -ms-transform: translate(@x, @y);
-       -o-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y); // IE9+
           transform: translate(@x, @y);
 }
-.skew(@x, @y) {
+.skew(@x; @y) {
   -webkit-transform: skew(@x, @y);
-     -moz-transform: skew(@x, @y);
-      -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twitter/bootstrap/issues/4885
-       -o-transform: skew(@x, @y);
+      -ms-transform: skewX(@x) skewY(@y); // See https://github.com/twbs/bootstrap/issues/4885; IE9+
           transform: skew(@x, @y);
 }
-.translate3d(@x, @y, @z) {
+.translate3d(@x; @y; @z) {
   -webkit-transform: translate3d(@x, @y, @z);
-     -moz-transform: translate3d(@x, @y, @z);
-       -o-transform: translate3d(@x, @y, @z);
           transform: translate3d(@x, @y, @z);
 }
-
 // Gradient Bar Colors for buttons and alerts
 .gradientBar(@primaryColor, @secondaryColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   color: @textColor;
@@ -268,14 +245,12 @@
   .gradientBar(@startColor, @endColor, @textColor, @textShadow);
   *background-color: @endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   .reset-filter();
-
   // in these cases the gradient won't cover the background, so we override
   &:hover, &:active, &.active, &.disabled, &[disabled] {
     color: @textColor;
     background-color: @endColor;
     *background-color: darken(@endColor, 5%);
   }
-
   // IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
   &:active,
   &.active {
@@ -283,5 +258,12 @@
   }
 }
 
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
 
 

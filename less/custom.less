@@ -4,6 +4,10 @@
 // LAYOUT //
 ////////////
 
+body, h1, h2, h3, h4, h5, h6 {
+ font-family:  @font-family-sans-serif;
+}
+
 // header
 header#top {
 	margin-bottom: 1em;
@@ -17,7 +21,8 @@ header#top {
 	.column(2);
 }
 #accordion,
-.block {
+.block,
+.modal-wrapper {
   .column(3);
 }
 .row {
@@ -44,7 +49,6 @@ header#top {
 	background-color: #000;
 }
 h1 {
-	font-family: Georgia;
 	font-size: 2em;
 	color: #fff;
 	 a {
@@ -53,13 +57,11 @@ h1 {
 	}
 }
 h2 {
-	font-family: Georgia;
 	font-size: 1.5em;
 	color: @black;
 	text-align: center;
 }
 h3 {
-	font-family: Georgia;
 	font-size: 1em;
 	color: @black;
 }
@@ -79,11 +81,13 @@ h3 {
   h3 {
     cursor: pointer;
     margin: 0;
+    color: @white;
+    text-shadow: @textShadow;
     border: solid 1px red;
-    #gradient > .vertical(@gray, @white);
+    #gradient > .vertical(@startColor, @endColor);
     padding: 5px;
     &.up {
-      #gradient > .vertical(@white, @gray);
+      #gradient > .vertical(@endColor, @startColor);
     }
     &:before {
       content: "\f055";
@@ -179,9 +183,11 @@ h3 {
      font-size: 0.875em;
      content: "\f165";
      margin: 0 0 0 5px;
+     text-shadow: 0.1em 0.1em #111;
    }
    &.down:after {
      content: "\f164";
    }
   }
 }
+

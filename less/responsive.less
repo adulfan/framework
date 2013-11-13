@@ -1,12 +1,12 @@
 //Media queries file for responsive layout.
 /* Large desktop */
-@media (min-width: 1200px) {}
+@media (min-width: @screen-lg) {}
 
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {}
+@media (min-width: @screen-phone) and (max-width: @screen-desktop) {}
 
 /* Landscape phone to portrait tablet */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: @screen-tablet) {
  section[class*="col"],
  .equal {
     .column(12);
@@ -15,7 +15,7 @@
 }
 
 /* Landscape phones and down */
-@media (max-width: 480px) {
+@media (max-width: @screen-phone) {
  section[class*="col"],
  .equal {
     .column(12);
