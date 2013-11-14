@@ -1,0 +1,141 @@
+.nav-justified {
+  width: 100%;
+
+  > li {
+    float: none;
+     > a {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+  @media (min-width: @screen-sm-min) {
+    > li {
+      display: table-cell;
+      width: 1%;
+      > a {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+// Mixin for adding on top the shared `.nav-justified` styles for our tabs
+.nav-tabs-justified {
+  border-bottom: 0;
+
+  > li > a {
+    // Override margin from .nav-tabs
+    margin-right: 0;
+    .border-radius(4px);
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    border: 1px solid @gray;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    > li > a {
+      border-bottom: 1px solid @gray;
+      .border-radius(4px);
+    }
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+      border-bottom-color: @gray;
+    }
+  }
+}
+
+// Tabs
+// -------------------------
+.nav {
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  .clearfix();
+
+  > li {
+    position: relative;
+    display: block;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: 5px;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.disabled > a {
+      color: @gray;
+
+      &:hover,
+      &:focus {
+        color: @gray;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+// Give the tabs something to sit on
+.nav-tabs {
+  border-bottom: 1px solid @gray;
+  > li { 
+    float: left;
+    // Make the list-items overlay the bottom border
+    margin-bottom: -1px;
+
+    // Actual tabs (as links)
+    > a {
+      margin-right: 2px;
+      .border-radius(4px 4px 0 0);
+      padding: 5px;
+      &:hover {
+        border-color: @gray;
+        text-decoration: none;
+      }
+    }
+    // Active state, and it's :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @gray;
+        background-color: @white;
+        border: 1px solid @gray;
+        border-bottom: none;
+        cursor: default;
+      }
+    }
+  }
+  // pulling this in mainly for less shorthand
+  &.nav-justified {
+    .nav-justified();
+    .nav-tabs-justified();
+  }
+}
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s;
+  &.in {
+    opacity: 1;
+  }
+}
