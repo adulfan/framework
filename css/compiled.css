@@ -20,6 +20,7 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
 }
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
@@ -1949,10 +1950,10 @@ h3 {
   background-image: linear-gradient(to bottom, #ffffff, #cccccc);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffcccccc', GradientType=0);
-  position: relative;
 }
 .popup {
   text-align: center;
+  position: relative;
 }
 .trigger {
   cursor: pointer;
@@ -1966,18 +1967,13 @@ h3 {
   -webkit-box-shadow: 1px 0 5px #cccccc;
   -moz-box-shadow: 1px 0 5px #cccccc;
   box-shadow: 1px 0 5px #cccccc;
-  left: 50%;
-  display: none;
-  /*   width: 100%; */
-
   width: 70%;
   padding: 1px;
   position: absolute;
   text-align: left;
-  top: 50px;
   white-space: normal;
   z-index: 1010;
-  margin: 0 0 0 -35%;
+  top: -20px;
 }
 .dropdown-menu .padded {
   padding: 1.5%;
@@ -2007,8 +2003,9 @@ h3 {
   top: -6px;
 }
 .dropdown-menu.top {
-  bottom: 90%;
   top: auto;
+  bottom: 100%;
+  margin: 0 0 10px 0;
 }
 .dropdown-menu.top:before {
   border-bottom: none;
@@ -2032,9 +2029,13 @@ h3 {
   bottom: -6px;
   top: auto;
 }
+.dropdown-menu.bottom {
+  top: 100%;
+  margin: 10px 0 0 0;
+}
 .dropdown-menu.right {
-  left: 107%;
-  top: 5px;
+  left: 100%;
+  margin: 0 0 0 20px;
 }
 .dropdown-menu.right:before {
   border-bottom: 7px solid transparent;
@@ -2061,9 +2062,8 @@ h3 {
   left: -6px;
 }
 .dropdown-menu.left {
-  left: auto;
-  right: 70%;
-  top: 5px;
+  right: 100%;
+  margin: 0 0 0 -20px;
 }
 .dropdown-menu.left:before {
   border-bottom: 7px solid transparent;

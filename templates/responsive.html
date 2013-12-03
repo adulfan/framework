@@ -14,18 +14,7 @@
   <script src="../library/bootstrap/transitions-bootstrap.js" type="text/javascript"></script>
   <script src="../library/bootstrap/modal-bootstrap.js" type="text/javascript"></script>
   <script src="../library/bootstrap/tab-bootstrap.js" type="text/javascript"></script>
-<!--
-  <script src="../library/jquery.ui.core.js" type="text/javascript"></script>
-  <script src="../library/jquery.ui.widget.js" type="text/javascript"></script>
-  <script src="../library/jquery.ui.accordion.js" type="text/javascript"></script>
--->
-  
-  <!--<script src="../library/jquery-1.10.2.js" type="text/javascript"></script> -->
-  <!--
-  <script src="../library/jquery-2.0.3.min.js" type="text/javascript"></script>
-  <script src="../library/jquery-2.0.3.min.map" type="text/javascript"></script>
-  -->
-  <!-- 	<script src="http://lesscss.googlecode.com/files/less-1.0.18.min.js" type="text/javascript"></script> -->
+  <script src="../library/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
 	<!--[if lt IE 9]><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
@@ -40,21 +29,59 @@
   		<h2>Sidebar</h2>
   		<div class="popup">
     		<a class="trigger" aria-haspopup="true"><i class="fa fa-chevron-down"></i>Trigger</a>
-    		<div class="dropdown-menu slider" role="menu">
-  		  <div class="padded">
-    		  <h3 class="dropdown-title">Popover bottom</h3>
-          <ul>
-            <li>One</li>
-            <li>Two</li>
-          </ul>
-  		  </div>
-      </div>
-    		<p>dsjfha lfhas klhasldf ajkf alkf la</p>
+    		<div class="dropdown-menu slider bottom" role="menu">
+    		  <div class="padded">
+      		  <h3 class="dropdown-title">Popover bottom</h3>
+            <ul>
+              <li>One</li>
+              <li>Two</li>
+            </ul>
+    		  </div>
+        </div>
+      </div><!--/popup-->
+      <div>
+        <p>dsjfha lfhas klhasldf ajkf alkf la</p>
     		<p>dsjfha lfhas klhasldf ajkf alkf la</p>
     		<p>dsjfha lfhas klhasldf ajkf alkf la</p>
     		<p>dsjfha lfhas klhasldf ajkf alkf la</p>
     		<p>dsjfha lfhas klhasldf ajkf alkf la</p>
   		</div>
+  		<div class="popup">
+    		<a class="trigger" aria-haspopup="true"><i class="fa fa-chevron-down"></i>Trigger</a>
+    		<div class="dropdown-menu slider top" role="menu">
+    		  <div class="padded">
+      		  <h3 class="dropdown-title">Popover bottom</h3>
+            <ul>
+              <li>One</li>
+              <li>Two</li>
+            </ul>
+    		  </div>
+        </div>
+      </div><!--/popup-->
+      <div class="popup">
+    		<a class="trigger" aria-haspopup="true"><i class="fa fa-chevron-down"></i>Trigger</a>
+    		<div class="dropdown-menu slider right" role="menu">
+    		  <div class="padded">
+      		  <h3 class="dropdown-title">Popover bottom</h3>
+            <ul>
+              <li>One</li>
+              <li>Two</li>
+            </ul>
+    		  </div>
+        </div>
+      </div><!--/popup-->
+      <div class="popup">
+    		<a class="trigger" aria-haspopup="true"><i class="fa fa-chevron-down"></i>Trigger</a>
+    		<div class="dropdown-menu slider left" role="menu">
+    		  <div class="padded">
+      		  <h3 class="dropdown-title">Popover bottom</h3>
+            <ul>
+              <li>One</li>
+              <li>Two</li>
+            </ul>
+    		  </div>
+        </div>
+      </div><!--/popup-->
   	</section><!--/sidebar-->
   	
   	<!-- Main Body -->
@@ -62,12 +89,12 @@
       <h2>Main</h2>
       <div class="clearfix">
         <div id="accordion">
-        <h3>LIST ONE</h3>
-        <!-- dynamic list -->
-        <ul class="people box"></ul> 
-        <h3>MONTHS</h3>
-        <!-- dynamic list -->
-        <ul class="months box">
+          <h3>LIST ONE</h3>
+          <!-- dynamic list -->
+          <ul class="people box"></ul> 
+          <h3>MONTHS</h3>
+          <!-- dynamic list -->
+          <ul class="months box">
             <li>January</li>
             <li>February</li>
             <li>March</li>
@@ -81,12 +108,12 @@
             <li>November</li>
             <li>December</li>
           </ul> 
-        <h3>DAYS</h3>
-        <!-- dynamic list -->
-        <ul class="days box"></ul>
-        <h3>Cats</h3>
-        <div class="box"><p>jgfjdghdsh</p></div>
-      </div>
+          <h3>DAYS</h3>
+          <!-- dynamic list -->
+          <ul class="days box"></ul>
+          <h3>Cats</h3>
+          <div class="box"><p>jgfjdghdsh</p></div>
+        </div>
         
         <div class="block cleafix">
         <h5>Link List</h5>
@@ -156,6 +183,21 @@
             </div>
         </div>
       </div><!--/tabular-data-->
+     
+     <div class="block">
+     <div class="popup">
+    		<a class="trigger" aria-haspopup="true"><i class="fa fa-chevron-down"></i>Trigger</a>
+    		<div class="dropdown-menu slider left" role="menu">
+    		  <div class="padded">
+      		  <h3 class="dropdown-title">Popover bottom</h3>
+            <ul>
+              <li>One</li>
+              <li>Two</li>
+            </ul>
+    		  </div>
+        </div>
+      </div><!--/popup-->
+     </div>
      
   	</section><!--/middle-->
   	

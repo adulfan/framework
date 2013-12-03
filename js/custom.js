@@ -87,8 +87,33 @@
     });
   }
   function drop_downs() {
+  var trigger = $('.trigger');
+/*
+   trigger.next(".dropdown-menu.bottom").position({
+          my:        "center top",
+          at:        "center bottom",
+          of:         trigger,
+          collision: "none" });
+   trigger.next(".dropdown-menu.top").position({
+          my:        "center",
+          at:        "center top",
+          of:         trigger,
+          collision: "none" })
+*/;
+/*
+  $('.trigger').next(".dropdown-menu").position({
+          my:        "right center",
+          at:        "left center",
+          of:         $('.trigger.left'),
+          collision: "none" });     
+          
+*/
+  $(".dropdown-menu").hide();
+  var width = ($('.dropdown-menu').parent().width() - $('.dropdown-menu').siblings().width())/2;
+  $('.dropdown-menu.left').css('left', -(width));
+  $('.dropdown-menu.right').css('left',  (width+$('.dropdown-menu').siblings().width()));
     $('.trigger').click(function(e) {
-      if ($(this).next(".dropdown-menu").is(":visible")) {
+    if ($(this).next(".dropdown-menu").is(":visible")) {
         e.stopPropagation();
         $(this).next().slideUp('fast');
       } else {
@@ -102,7 +127,7 @@
       if (!$('.dropdown-menu').is(e.target) && $('.dropdown-menu').has(e.target).length === 0) {
           $(".dropdown-menu").slideUp('slow');
       }
-    });
+    });   
   }
   //expand collapse list of links or data.
   function expand_collapse() {
@@ -114,7 +139,7 @@
     if(sum_total > 5 ) {
      $('.expand-list li').slice(n).hide();
      //add link if the list has more links to display.
-     $('.block').append('<a class="more-link">View All</a>');
+     $('.block .expand-list').parent().append('<a class="more-link">View All</a>');
     }
     
     $('.more-link').on('click', function(e) {
@@ -126,7 +151,25 @@
       e.preventDefault();
    });
   }//end expend list function.
-
+ 
+ 
+ //Remove the value of the text field on focus.
+  function search_value_change() {
+    $('.search-form input[type=text]').each(function(){
+    if($(this).val() == '') {
+      $(this).val('Search');
+    }
+     $(this).focus(function() {
+       var newValue = $(this).val();
+       if (!$(this).data('newValue')) $(this).data('newValue', $(this).val());
+       if ($(this).val()==$(this).data('newValue')) $(this).val('');
+     });
+       
+     $(this).blur(function(){
+       if ($(this).val()=='') $(this).val($(this).data('newValue')); 
+     });
+   });
+  }
   $(function() {
    // The DOM is ready!
    
